@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Acessando o DOM</h1>
+    <p>É possível acessar e modificar o conteúdo do documento HTML por meio de suas tags, ids, classes e nomes, através do DOM.</p>
+
+    <p name="paragrafo2">Segundo Parágrafo</p>
+
+    <p class="paragrafo3">Terceiro Parágrafo</p>
+
+    <div id="msg">Fim do Documento</div>
+    <br>
+
+    <script>
+        // Por tag
+        let paragrafos = document.getElementsByTagName('p');
+        document.write(paragrafos[0].innerHTML + "<br>");
+
+        // Por id
+        let titulo = document.getElementById('titulo');
+        document.write(titulo.innerHTML + "<br>");
+
+        // Por nome
+        let p2 = document.getElementsByName('paragrafo2')[0];
+        p2.innerText = 'Parágrafo 2 Modificado';
+        p2.style.background = 'red';
+        p2.style.color = 'white';
+
+        // Por classe
+        let p3 = document.getElementsByClassName('paragrafo3')[0];
+        p3.innerText = 'Parágrafo 3 Modificado';
+        p3.style.background = 'blue';
+        p3.style.color = 'white';
+
+        // Por query selector
+        let fim = document.querySelector('div#msg');
+        fim.innerText = 'Fim do Documento (Cor Modificada)'
+        fim.style.background = 'green';
+        fim.style.color = 'white';
+
+    </script>
+</body>
+</html>
